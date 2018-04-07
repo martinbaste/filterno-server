@@ -9,8 +9,8 @@ document.getElementById("form").addEventListener("submit", function(e) {
 	        return;
 	      }
 	      // Examine the text in the response
-	      response.json().then(function(data) {
-	        console.log(data);
+	      response.text().then(function(data) {
+	        document.getElementById('resp').innerHTML = data;
 	      });
 	    }
 	  )
