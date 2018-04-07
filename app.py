@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request;
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello_world():
@@ -7,4 +10,4 @@ def hello_world():
 
 @app.route('/analyze')
 def analyze():
-    return request.args.get('text');
+    return '{"text":"' + request.args.get('text') + '"}';
