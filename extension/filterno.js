@@ -1,6 +1,8 @@
 document.getElementById("form").addEventListener("submit", function(e) {
 	e.preventDefault();
 	var text = document.getElementById("text").value;
+	window.open('http://127.0.0.1:5000/analyze?text=' + text);
+	return
 	fetch('http://127.0.0.1:5000/analyze?text=' + text)
 		.then(function(response) {
 	      if (response.status !== 200) {

@@ -18,7 +18,7 @@ def submit_query(query_words, mode=None, TIMESPAN=None):
     WordCloudImageTags
     """
     
-    parameters = {"query": " ".join(query_words), "format": "JSON"}
+    parameters = {"query": " ".join(query_words) + ' sourcelang:english', "format": "JSON"}
 
     if mode != None:
         parameters["mode"] = mode
