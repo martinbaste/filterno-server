@@ -2,12 +2,24 @@
 # @Author: adrian
 # @Date:   2018-04-07 22:41:21
 # @Last Modified by:   Adrian Zucco
-# @Last Modified time: 2018-04-07 23:29:23
+# @Last Modified time: 2018-04-08 10:45:00
 
 
 import json
 import requests
 import urllib
+import nltk
+from newspaper import Article 
+
+
+def get_key_words(url):
+
+    article = Article("""{}""".format(url))
+    article.download()
+    article.parse()
+    article.nlp()
+
+    return article.keywords, article.title, article.publish_date
 
 
 def submit_query(query_words, mode=None, TIMESPAN=None):
