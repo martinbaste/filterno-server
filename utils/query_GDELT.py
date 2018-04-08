@@ -2,7 +2,7 @@
 # @Author: adrian
 # @Date:   2018-04-07 22:41:21
 # @Last Modified by:   Adrian Zucco
-# @Last Modified time: 2018-04-08 12:27:22
+# @Last Modified time: 2018-04-08 12:29:14
 
 
 import json
@@ -37,10 +37,10 @@ def submit_query(query_words, mode=None, TIMESPAN=None):
     WordCloudImageTags
     """
     
-    s1 = set(query_words)
-    s3 = set.intersection(s1, filt_keys)
+    # s1 = set(query_words)
+    # s3 = set.intersection(s1, filt_keys)
 
-    parameters = {"query": " ".join(list(s3)) + ' sourcelang:english', "format": "JSON"}
+    parameters = {"query": " ".join(query_words) + ' sourcelang:english', "format": "JSON"}
 
     print(s3)
 
