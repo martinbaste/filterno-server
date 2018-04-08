@@ -17,10 +17,15 @@ def get_key_words(url):
     article = Article(url)
     article.download()
     article.html
-    article.parse()
-    article.nlp()
+    try:
+        article.parse()
+        article.nlp()
+        return article.keywords, article.title, article.publish_date
+    except Exception as e:
+        return None
+    
 
-    return article.keywords, article.title, article.publish_date
+    
 
 
 def submit_query(query_words, mode=None, TIMESPAN=None):

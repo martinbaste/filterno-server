@@ -12,13 +12,14 @@
   </head>
   <body>
   	<div class="container">
-	    <h1>Hello, world!</h1>
+  		<h3>Feeling News</h3>
+		<button id="currentURL" type="button" class="btn btn-primary">Search current article</button>
 	    <form id="form" action='http://127.0.0.1:5000/analyze'>
 		  <div class="form-group">
-		    <label for="exampleFormControlTextarea1">News article</label>
+		    <label for="exampleFormControlTextarea1">Enter keywords</label>
 		    <textarea class="form-control" id="text" rows="3" name="text"></textarea>
 		  </div>
-		  <button type="submit" class="btn btn-primary">Submit</button>
+		  <button type="submit" class="btn btn-secondary">Search</button>
 		</form>
 	</div>
 	<div id="resp">

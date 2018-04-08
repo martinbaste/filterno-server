@@ -3,14 +3,11 @@
     "description" : "Base Level Extension",
     "version": "1.0",
     "manifest_version": 2,
+    "browser_action": {
+      "default_popup": "filterno.html",
+      "default_icon": "hello_extensions.png"
+    },
     "permissions": [
-	    "activeTab"
-	  ],
-	  "background": {
-	    "scripts": ["filterno.js"],
-	    "persistent": false
-	  },
-	  "browser_action": {
-	    "default_title": "Make this page red"
-	  }
+	  "activeTab"
+	]
   }

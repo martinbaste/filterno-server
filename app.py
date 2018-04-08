@@ -15,6 +15,14 @@ def hello_world():
 @app.route('/analyze')
 def analyze():
 	url = request.args.get('url')
-	keywords = get_key_words(url)[0]
-	res = submit_query(keywords, 'tonechart')
+	keywords = get_key_words(url)
+	if keywords == None:
+		return 'Cannot recognize article'
+	res = submit_query(keywords[0], 'tonechart')
+	return res
+
+@app.route('/analyzekw')
+def analyzekw():
+	keywords = request.args.get('kw')
+	res = submit_query(keywords.split(' '), 'tonechart')
 	return res
