@@ -2,14 +2,15 @@
 # @Author: adrian
 # @Date:   2018-04-07 22:41:21
 # @Last Modified by:   Adrian Zucco
-# @Last Modified time: 2018-04-08 10:45:00
+# @Last Modified time: 2018-04-08 12:18:47
 
 
 import json
 import requests
 import urllib
 import nltk
-from newspaper import Article 
+from newspaper import Article
+from keywords import filt_keys
 
 
 def get_key_words(url):
@@ -36,7 +37,11 @@ def submit_query(query_words, mode=None, TIMESPAN=None):
     WordCloudImageTags
     """
     
-    parameters = {"query": " ".join(query_words) + ' sourcelang:english', "format": "JSON"}
+    s1 = set(query_words)
+    s3 = s1 & filt_keys
+
+
+    parameters = {"query": " ".join(list(s3)) + ' sourcelang:english', "format": "JSON"}
 
     if mode != None:
         parameters["mode"] = mode
