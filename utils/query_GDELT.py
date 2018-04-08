@@ -2,7 +2,7 @@
 # @Author: adrian
 # @Date:   2018-04-07 22:41:21
 # @Last Modified by:   Adrian Zucco
-# @Last Modified time: 2018-04-08 12:24:19
+# @Last Modified time: 2018-04-08 12:27:22
 
 
 import json
@@ -38,9 +38,11 @@ def submit_query(query_words, mode=None, TIMESPAN=None):
     """
     
     s1 = set(query_words)
-    s3 = s1 & filt_keys
-    
+    s3 = set.intersection(s1, filt_keys)
+
     parameters = {"query": " ".join(list(s3)) + ' sourcelang:english', "format": "JSON"}
+
+    print(s3)
 
     if mode != None:
         parameters["mode"] = mode
