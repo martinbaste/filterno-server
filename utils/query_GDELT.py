@@ -2,7 +2,7 @@
 # @Author: adrian
 # @Date:   2018-04-07 22:41:21
 # @Last Modified by:   Adrian Zucco
-# @Last Modified time: 2018-04-08 12:18:47
+# @Last Modified time: 2018-04-08 12:24:19
 
 
 import json
@@ -10,7 +10,7 @@ import requests
 import urllib
 import nltk
 from newspaper import Article
-from keywords import filt_keys
+from utils.keywords import filt_keys
 
 
 def get_key_words(url):
@@ -39,8 +39,7 @@ def submit_query(query_words, mode=None, TIMESPAN=None):
     
     s1 = set(query_words)
     s3 = s1 & filt_keys
-
-
+    
     parameters = {"query": " ".join(list(s3)) + ' sourcelang:english', "format": "JSON"}
 
     if mode != None:
