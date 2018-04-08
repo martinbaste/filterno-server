@@ -11,6 +11,6 @@ def hello_world():
 
 @app.route('/analyze')
 def analyze():
-	text = request.args.get('text')
-	res = submit_query(text.split(' '), 'tonechart')
+	url = request.args.get('url')
+	res = submit_query(url.split(' '), 'tonechart')
 	return res
