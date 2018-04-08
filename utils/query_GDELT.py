@@ -14,8 +14,9 @@ from newspaper import Article
 
 def get_key_words(url):
 
-    article = Article("""{}""".format(url))
+    article = Article(url)
     article.download()
+    article.html
     article.parse()
     article.nlp()
 

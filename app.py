@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
-from utils.query_GDELT import submit_query
+from utils.query_GDELT import submit_query, get_key_words
+import nltk
 
 app = Flask(__name__)
 CORS(app)
+
+nltk.data.path.append('./nltk_dependencies')
 
 @app.route('/')
 def hello_world():
@@ -12,5 +15,6 @@ def hello_world():
 @app.route('/analyze')
 def analyze():
 	url = request.args.get('url')
-	res = submit_query(url.split(' '), 'tonechart')
+	keywords = get_key_words(url)[0]
+	res = submit_query(keywords, 'tonechart')
 	return res
