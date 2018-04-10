@@ -1,5 +1,7 @@
 # Filter Mirror
 
+This is a project done during the April 2018 Copenhacks hackathon in Copenhagen.
+
 The set up process is not entirely streamlined, yet.
 
 For now, you'll need Python (at least 3.6) and pip.
