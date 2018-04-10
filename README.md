@@ -1,31 +1,18 @@
-# filterno-server
+# Filter Mirror
 
-Install venv with:
-```
-$ sudo pip install virtualenv
-```
-or (ubuntu)
-```
-$ sudo apt-get install python-virtualenv
-```
-Install the requirements with:
-```
-virtualenv --no-site-packages --distribute .env && source .env/bin/activate && pip install -r requirements.txt
-```
+The set up process is not entirely streamlined, yet.
 
-Initialize environment on mac and linux with
+For now, you'll need Python (at least 3.6) and pip.
+
 ```
-. venv/bin/activate
+pip install -r requirements.txt
+export FLASK_APP=app.py
 ```
-Windows:
+Then run the app with 
 ```
-venv\Scripts\activate
-```
-exit with
-```
-deactivate
+flask run
 ```
 
+To launch the extension, go to chrome extensions, enable dev mode and load the 'extension' folder.
 
-Our API
-
+To-do: Upgrade repository to use with virtualenv.
